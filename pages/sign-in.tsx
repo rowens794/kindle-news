@@ -1,4 +1,5 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
+import Link from "next/link";
 
 export default function Example() {
   const { data: session } = useSession();
@@ -98,7 +99,7 @@ const SignInButton = () => {
 
 const LoggedInButton = (data: any) => {
   return (
-    <a
+    <Link
       href="/dashboard"
       className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50 cursor-pointer"
     >
@@ -132,6 +133,6 @@ const LoggedInButton = (data: any) => {
         </g>
       </svg>
       <p className="ml-4 cursor-pointer">Go To Dashboard</p>
-    </a>
+    </Link>
   );
 };

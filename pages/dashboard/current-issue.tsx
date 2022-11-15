@@ -116,7 +116,7 @@ const Card = ({ article }: { article: any }) => {
       className="relative flex items-center space-x-3 rounded-lg border border-gray-300 bg-white px-3 py-2 shadow-sm focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:border-gray-400 flex-row my-2"
     >
       <div className="min-w-0 flex-1">
-        <a href="#" className="focus:outline-none">
+        <div className="focus:outline-none">
           <p className="text-sm font-medium text-gray-900">
             {article.title}
             <span className="text-xs text-gray-600 font-light ml-2">
@@ -127,7 +127,7 @@ const Card = ({ article }: { article: any }) => {
           <p className="truncate text-sm text-gray-500 font-light">
             {article.description}
           </p>
-        </a>
+        </div>
       </div>
 
       <div>

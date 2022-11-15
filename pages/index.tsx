@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function Home() {
@@ -50,14 +50,14 @@ function Hero() {
                 </p>
                 <div className="mt-8 flex gap-x-4 sm:justify-center">
                   {session ? (
-                    <a
+                    <Link
                       href="/dashboard"
                       className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 sm:text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700 text-sm"
                     >
                       Go to Your Dashboard
-                    </a>
+                    </Link>
                   ) : (
-                    <a
+                    <Link
                       href="/create-account"
                       className="inline-block rounded-lg bg-indigo-600 px-4 py-1.5 sm:text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-indigo-600 hover:bg-indigo-700 hover:ring-indigo-700 text-sm"
                     >
@@ -65,17 +65,14 @@ function Hero() {
                       <span className="text-indigo-200 ml-2" aria-hidden="true">
                         &rarr;
                       </span>
-                    </a>
+                    </Link>
                   )}
-                  <a
-                    href="#"
-                    className="inline-block rounded-lg px-4 py-1.5 text-sm sm:text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
-                  >
+                  <button className="inline-block rounded-lg px-4 py-1.5 text-sm sm:text-base font-semibold leading-7 text-gray-900 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                     Video demo
                     <span className="text-gray-400 ml-2" aria-hidden="true">
                       &rarr;
                     </span>
-                  </a>
+                  </button>
                 </div>
               </div>
               <div className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
@@ -150,30 +147,30 @@ const TopNav = ({ session }: { session: any }) => {
             aria-label="Global"
           >
             <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
-              <a href="#" className="-m-1.5 p-1.5">
+              <Link href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
                 <img
                   className="h-8"
                   src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                   alt=""
                 />
-              </a>
+              </Link>
             </div>
             <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
               {session ? (
-                <a
+                <Link
                   href="/dashboard"
                   className="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                 >
                   Dashboard
-                </a>
+                </Link>
               ) : (
-                <a
+                <Link
                   href="/sign-in"
                   className="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                 >
                   Sign in
-                </a>
+                </Link>
               )}
             </div>
           </nav>
