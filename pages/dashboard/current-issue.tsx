@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { useSession, signOut } from "next-auth/react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import {
+  DragDropContext,
+  Droppable,
+  Draggable,
+  resetServerContext,
+} from "react-beautiful-dnd";
 
 import Sidebar from "../../components/dashboard-sidebar";
 
@@ -143,6 +148,8 @@ const Card = ({ article }: { article: any }) => {
 };
 
 export async function getServerSideProps(context: any) {
+  resetServerContext();
+
   const articles = [
     {
       id: "1",
